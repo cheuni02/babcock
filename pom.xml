@@ -84,18 +84,45 @@
     <build>
         <plugins>
             <plugin>
-                <artifactId>
-                    maven-compiler-plugin
-                </artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.1</version>
                 <configuration>
                     <source>1.7</source>
                     <target>1.7</target>
-                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
+            <!-- added for FitNesse usage so I can create a local jar with the libs -->
+            <!-- and point server at this -->
+            <!-- http://maven.apache.org/plugins/maven-assembly-plugin/usage.html -->
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+
+    <!--<build>-->
+        <!--<plugins>-->
+            <!--<plugin>-->
+                <!--<artifactId>-->
+                    <!--maven-compiler-plugin-->
+                <!--</artifactId>-->
+                <!--<version>3.1</version>-->
+                <!--<configuration>-->
+                    <!--<source>1.7</source>-->
+                    <!--<target>1.7</target>-->
+                    <!--<encoding>UTF-8</encoding>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
+        <!--</plugins>-->
+    <!--</build>-->
 
 
 

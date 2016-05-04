@@ -5,6 +5,6 @@ import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(format={"pretty", "html:target/cucumber"},features="src/test/resources/",tags = {"@homepage"})
+@CucumberOptions(format={"pretty", "html:target/com.babcock.cucumber.bdd"},features="src/test/resources/",tags = {"@homepage"})
 public class RunHomepageStepdefs {
 }

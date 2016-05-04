@@ -11,7 +11,7 @@ public class BCBase {
     }
 
     public void visit_page(WebDriver driver) {
-        driver.navigate().to("www.babcockinternational.com");
+        driver.navigate().to("http://www.babcockinternational.com");
     }
 
     public String getURL (){
