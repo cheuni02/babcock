@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
  */
 public class BCBase {
     private WebDriver driver;
+
+
     public BCBase(WebDriver driver) {
         this.driver = driver;
     }
@@ -17,6 +19,8 @@ public class BCBase {
     public String getURL (){
         return driver.getCurrentUrl();
     }
+
+
 
 
 }

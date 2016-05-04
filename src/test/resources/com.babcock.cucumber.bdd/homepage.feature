@@ -11,6 +11,7 @@ Feature: As a Babcock website user
   Background: arrive to the Babcock homepage
     Given I am on the homepage after a cache refreshed browser opened
 
+  @cookies
   Scenario: Checking cookie message appears and can be closed
     Then the cookie statement should appear
     And I can click to open the statement page
