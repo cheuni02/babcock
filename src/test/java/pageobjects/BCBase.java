@@ -12,7 +12,7 @@ public class BCBase {
         this.driver = driver;
     }
 
-    public void visit_page(WebDriver driver) {
+    public static void visit_page(WebDriver driver) {
         driver.navigate().to("http://www.babcockinternational.com");
     }
 
