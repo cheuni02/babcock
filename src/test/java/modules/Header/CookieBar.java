@@ -15,8 +15,15 @@ public class CookieBar {
     // 1)
     //@FindBys({@FindBy(how= How.TAG_NAME, using = "section"), @FindBy(how= How.ID, using = "js-babcock-cookie-bar")})
 
+//    @FindBy(how= How.ID, using = "js-babcock-cookie-bar")
+//    public static WebElement cookiebar;
+
     @FindBy(how= How.ID, using = "js-babcock-cookie-bar")
     public static WebElement cookiebar;
+
+    public static boolean isDisplayed() {
+        return cookiebar.isDisplayed();
+    }
 
     // 2)
     //driver.findElements(By.tagName("section").id("js-babcock-cookie-bar"));

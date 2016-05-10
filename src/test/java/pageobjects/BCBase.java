@@ -1,6 +1,7 @@
 package pageobjects;
 
 import modules.Header.CookieBar;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 
 /**
@@ -10,9 +11,13 @@ public abstract class BCBase  {
     private static WebDriver driver;
     public static boolean bResult;
 
+//    @FindBy(id = "js-babcock-cookie-bar")
+//    private WebElement CookieBar;
+
 
     public BCBase(WebDriver driver) {
         BCBase.driver = driver;
+        //PageFactory.initElements(driver, this);
         BCBase.bResult = true;
     }
 
@@ -24,11 +29,17 @@ public abstract class BCBase  {
         return driver.getCurrentUrl();
     }
 
-    public String getURL (){
-        return driver.getCurrentUrl();
+    public boolean CookiebarPresent(WebDriver driver) {
+        try{
+            CookieBar.isDisplayed();
+            //driver.findElements(By.tagName("section").id("js-babcock-cookie-bar"));
+        }catch(NoSuchElementException e){
+            return false;
+        }
+        return true;
     }
 
-    //including the Header::CookieBar module
-    CookieBar cookie = new CookieBar(driver);
+
+
 
 }

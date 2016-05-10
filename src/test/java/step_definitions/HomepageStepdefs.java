@@ -16,12 +16,14 @@ public class HomepageStepdefs {
 
     //private static EmbeddedTomcat tomcat = new EmbeddedTomcat();
     public WebDriver driver;
+    BCHomepage homepageObject = new BCHomepage(driver);
 
     public HomepageStepdefs() { driver = Hooks.driver; }
 
     @Given("^I am on the homepage after a cache refreshed browser opened$")
     public void iAmOnTheHomepageAfterACacheRefreshedBrowserOpened() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
+
 
         BCHomepage.visit_page(driver);
         assertThat(BCHomepage.checkURL(driver), containsString("babcockinternational"));
@@ -30,27 +32,29 @@ public class HomepageStepdefs {
     @Then("^the cookie statement should appear$")
     public void theCookieStatementShouldAppear() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-//        if(CookieBar.cookiebar.isDisplayed()){
+
+//        if(homepageObject.
+//
+//        if(BCHomepage.CookiebarPresent(driver)){
 //            System.out.println("is displayed!");
-//        }else
-//        {
+//        }else{
 //            System.out.println("no it's not!");
 //        }
-//
-//        System.out.println("1)driver is");
+
+
 
     }
 
     @And("^I can click to open the statement page$")
     public void iCanClickToOpenTheStatementPage() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        System.out.println("2)driver is");
+
     }
 
     @And("^Also be able to close the cookie statement​$")
     public void alsoBeAbleToCloseTheCookieStatement​() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        System.out.println("3)driver is");
+
     }
 
 //    @After("@cookies")

@@ -11,7 +11,4 @@ public class BCHomepage extends BCBase {
     public BCHomepage(WebDriver driver) {
         super(driver);
     }
-    //private final WebDriver driver;
-
-
 }

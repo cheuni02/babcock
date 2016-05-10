@@ -5,8 +5,7 @@ import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.WebDriverException;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.net.MalformedURLException;
 
@@ -21,8 +20,8 @@ public class Hooks {
     public void spawnBrowser() throws MalformedURLException {
         System.setProperty("webdriver.chrome.driver","C:\\SeleniumWebdrivers\\chromedriver.exe");
         System.out.println("Called openBrowser");
-        //driver = new FirefoxDriver();
-        driver = new ChromeDriver();
+        driver = new FirefoxDriver();
+        //driver = new ChromeDriver();
         //driver.get("http://www.babcockinternational.com");
         driver.manage().deleteAllCookies();
         driver.manage().window().setSize(new Dimension(1200,800));
