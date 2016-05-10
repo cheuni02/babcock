@@ -33,7 +33,11 @@ public class HomepageStepdefs {
     public void theCookieStatementShouldAppear() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
 
-//        if(homepageObject.
+        if(BCHomepage.CookiebarPresent(driver)){
+            System.out.println("cookie bar is displayed!");
+        }else{
+            System.out.println("cookie bar is NOT displayed!");
+        }
 //
 //        if(BCHomepage.CookiebarPresent(driver)){
 //            System.out.println("is displayed!");

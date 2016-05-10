@@ -4,13 +4,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 import step_definitions.Hooks;
 
 /**
  * Created by ivancheung on 06/05/2016.
  */
 public class CookieBar {
-    public CookieBar(WebDriver driver){ Hooks.driver = driver; }
+    public CookieBar(WebDriver driver){
+        Hooks.driver = driver;
+        PageFactory.initElements(driver, this);
+    }
 
     // 1)
     //@FindBys({@FindBy(how= How.TAG_NAME, using = "section"), @FindBy(how= How.ID, using = "js-babcock-cookie-bar")})
@@ -21,7 +25,7 @@ public class CookieBar {
     @FindBy(how= How.ID, using = "js-babcock-cookie-bar")
     public static WebElement cookiebar;
 
-    public static boolean isDisplayed() {
+    public static boolean isPresent(WebDriver driver, CookieBar cookieBar) {
         return cookiebar.isDisplayed();
     }
 
