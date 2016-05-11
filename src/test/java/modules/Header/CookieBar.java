@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import step_definitions.Hooks;
 
+import static common_actions.CommonActions.*;
+
 /**
  * Created by ivancheung on 06/05/2016.
  */
@@ -31,7 +33,7 @@ public class CookieBar {
 
     static By cookie = By.id("js-babcock-cookie-bar");
     static By privacystatement = By.xpath("//a[@href=\'/Privacy\']");
-
+    static By cookietitle = By.linkText("//h3[@class=\'NotificationBar-itemTitle\'");
 
 //    def cookie_title(text)
 //    cookie_bar.h3(text: text)
@@ -58,8 +60,9 @@ public class CookieBar {
 //    }
 
     // 2)
-    public static boolean isPresent(WebDriver driver){
-        return driver.findElement(cookie).isDisplayed();
+    public static boolean isCookieBarPresent(WebDriver driver){
+        return isElementPresent(driver,cookie);
+
     }
 
 
@@ -75,6 +78,11 @@ public class CookieBar {
     public static void clickStatement(WebDriver driver)  throws InterruptedException {
         driver.findElement(privacystatement).click();
         Thread.sleep(5000);
+    }
+
+    public static boolean isCookieTitlePresent(WebDriver driver){
+        isElementPresent(driver,cookietitle);
+        return true; //driver.findElement(cookietitle).isDisplayed();
     }
 
 

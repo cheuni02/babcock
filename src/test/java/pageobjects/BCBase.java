@@ -1,7 +1,6 @@
 package pageobjects;
 
 import modules.Header.CookieBar;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -11,10 +10,6 @@ import org.openqa.selenium.support.PageFactory;
 public abstract class BCBase  {
     private static WebDriver driver;
     public static boolean bResult;
-
-//    @FindBy(id = "js-babcock-cookie-bar")
-//    private WebElement CookieBar;
-
 
     public BCBase(WebDriver driver) {
         BCBase.driver = driver;
@@ -30,16 +25,26 @@ public abstract class BCBase  {
         return driver.getCurrentUrl();
     }
 
-    public static boolean CookiebarPresent(WebDriver driver) {
-        CookieBar cookieBar = new CookieBar(driver);
-        try{
-            CookieBar.isPresent(driver);
-            //driver.findElements(By.tagName("section").id("js-babcock-cookie-bar"));
-        }catch(NoSuchElementException e){
-            return false;
-        }
-        return true;
-    }
+//    public static boolean CookiebarPresent(WebDriver driver) {
+//        CookieBar cookieBar = new CookieBar(driver);
+//        try{
+//            CookieBar.isPresent(driver);
+//
+//        }catch(NoSuchElementException e){
+//            return false;
+//        }
+//        return true;
+//    }
+
+//    public static boolean CookieTitlePresent(WebDriver driver) {
+//        CookieBar cookietitle = new CookieBar(driver);
+//        try {
+//            CookieBar.isCookieTitlePresent(driver);
+//        } catch (NoSuchElementException e) {
+//           return false;
+//        }
+//        return true;
+//    }
 
 
 //    public static void clickPrivacyStatement(WebDriver driver) throws InterruptedException {

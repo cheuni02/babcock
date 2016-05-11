@@ -14,5 +14,6 @@ Feature: As a Babcock website user
   @cookies
   Scenario: Checking cookie message appears and can be closed
     Then the cookie statement should appear
+    And the title of the cookie statement should be shown
     And I can click to open the statement page
     And Also be able to close the cookie statement​

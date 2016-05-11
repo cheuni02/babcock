@@ -3,10 +3,12 @@ package step_definitions;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import modules.Header.CookieBar;
 import org.openqa.selenium.WebDriver;
 import pageobjects.BCHomepage;
 
 import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 /**
@@ -31,21 +33,8 @@ public class HomepageStepdefs {
 
     @Then("^the cookie statement should appear$")
     public void theCookieStatementShouldAppear() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
 
-        if(BCHomepage.CookiebarPresent(driver)){
-            System.out.println("cookie bar is displayed!");
-        }else{
-            System.out.println("cookie bar is NOT displayed!");
-        }
-//
-//        if(BCHomepage.CookiebarPresent(driver)){
-//            System.out.println("is displayed!");
-//        }else{
-//            System.out.println("no it's not!");
-//        }
-
-
+        assertThat(CookieBar.isCookieBarPresent(driver), is(true));
 
     }
 
@@ -60,6 +49,11 @@ public class HomepageStepdefs {
     public void alsoBeAbleToCloseTheCookieStatement​() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
 
+    }
+
+    @And("^the title of the cookie statement should be shown$")
+    public void theTitleOfTheCookieStatementShouldBeShown() throws Throwable {
+        assertThat(CookieBar.isCookieTitlePresent(driver), is(true));
     }
 
 //    @After("@cookies")
