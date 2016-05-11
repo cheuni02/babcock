@@ -52,6 +52,7 @@ public class HomepageStepdefs {
     @And("^I can click to open the statement page$")
     public void iCanClickToOpenTheStatementPage() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
+        BCHomepage.clickPrivacyStatement(driver);
 
     }
 

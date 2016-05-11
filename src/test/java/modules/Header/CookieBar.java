@@ -1,9 +1,7 @@
 package modules.Header;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import step_definitions.Hooks;
 
@@ -16,26 +14,23 @@ public class CookieBar {
         PageFactory.initElements(driver, this);
     }
 
-    // 1)
+    // 1) Identifying elements using PageFactory method
+    ///////////////////////////////////////////////////
+
     //@FindBys({@FindBy(how= How.TAG_NAME, using = "section"), @FindBy(how= How.ID, using = "js-babcock-cookie-bar")})
 
+
 //    @FindBy(how= How.ID, using = "js-babcock-cookie-bar")
-//    public static WebElement cookiebar;
+//    public static WebElement cookie;
+//
+//    @FindBy(xpath = "//a[@href=\'/Privacy\']")
+//    public static WebElement privacystatement;
 
-    @FindBy(how= How.ID, using = "js-babcock-cookie-bar")
-    public static WebElement cookiebar;
+    // 2) Identifying elements using Abstract Element Locators
+    //////////////////////////////////////////////////////////
 
-    public static boolean isPresent(WebDriver driver, CookieBar cookieBar) {
-        return cookiebar.isDisplayed();
-    }
-
-    // 2)
-    //driver.findElements(By.tagName("section").id("js-babcock-cookie-bar"));
-
-    // 3)
-    //By byXpath = By.xpath("//input[(@id='id_Start') and (@class = 'blabla')]")
-
-
+    static By cookie = By.id("js-babcock-cookie-bar");
+    static By privacystatement = By.xpath("//a[@href=\'/Privacy\']");
 
 
 //    def cookie_title(text)
@@ -56,6 +51,43 @@ public class CookieBar {
 //
 //    def close
 //    cookie_bar.link(class: "NotificationBar-close").click
+
+    // 1)
+//    public boolean isPresent(WebDriver driver, CookieBar cookieBar) {
+//        return cookie.isDisplayed();
+//    }
+
+    // 2)
+    public static boolean isPresent(WebDriver driver){
+        return driver.findElement(cookie).isDisplayed();
+    }
+
+
+    // 1)
+//    public static void clickStatement(WebDriver driver, CookieBar privacyStatement)  throws InterruptedException {
+//        privacystatement.click();
+//            Thread.sleep(5000);
+//    }
+
+
+
+    // 2)
+    public static void clickStatement(WebDriver driver)  throws InterruptedException {
+        driver.findElement(privacystatement).click();
+        Thread.sleep(5000);
+    }
+
+
+
+    // more than one attribute method 1
+    //driver.findElements(By.tagName("section").id("js-babcock-cookie-bar"));
+
+    // more than one attribute method 2
+    //By byXpath = By.xpath("//input[(@id='id_Start') and (@class = 'blabla')]")
+
+
+
+
 
 
 

@@ -33,7 +33,7 @@ public abstract class BCBase  {
     public static boolean CookiebarPresent(WebDriver driver) {
         CookieBar cookieBar = new CookieBar(driver);
         try{
-            CookieBar.isPresent(driver, cookieBar);
+            CookieBar.isPresent(driver);
             //driver.findElements(By.tagName("section").id("js-babcock-cookie-bar"));
         }catch(NoSuchElementException e){
             return false;
@@ -42,6 +42,15 @@ public abstract class BCBase  {
     }
 
 
+//    public static void clickPrivacyStatement(WebDriver driver) throws InterruptedException {
+//        CookieBar privacyStatement = new CookieBar(driver);
+//        //CookieBar.clickStatement(driver, privacyStatement);
+//        CookieBar.clickStatement(driver);
+//    }
 
-
+    public static void clickPrivacyStatement(WebDriver driver) throws InterruptedException {
+        CookieBar privacyStatement = new CookieBar(driver);
+        //CookieBar.clickStatement(driver, privacyStatement);
+        CookieBar.clickStatement(driver);
+    }
 }
