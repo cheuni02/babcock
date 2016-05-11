@@ -41,14 +41,15 @@ public class HomepageStepdefs {
     @And("^I can click to open the statement page$")
     public void iCanClickToOpenTheStatementPage() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        BCHomepage.clickPrivacyStatement(driver);
+        //BCHomepage.clickPrivacyStatement(driver);
+        CookieBar.clickStatement(driver);
 
     }
 
     @And("^Also be able to close the cookie statement​$")
     public void alsoBeAbleToCloseTheCookieStatement​() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-
+        CookieBar.clickClose(driver);
     }
 
     @And("^the title of the cookie statement should be shown$")

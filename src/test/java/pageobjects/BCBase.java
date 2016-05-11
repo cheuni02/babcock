@@ -1,6 +1,5 @@
 package pageobjects;
 
-import modules.Header.CookieBar;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -25,37 +24,5 @@ public abstract class BCBase  {
         return driver.getCurrentUrl();
     }
 
-//    public static boolean CookiebarPresent(WebDriver driver) {
-//        CookieBar cookieBar = new CookieBar(driver);
-//        try{
-//            CookieBar.isPresent(driver);
-//
-//        }catch(NoSuchElementException e){
-//            return false;
-//        }
-//        return true;
-//    }
 
-//    public static boolean CookieTitlePresent(WebDriver driver) {
-//        CookieBar cookietitle = new CookieBar(driver);
-//        try {
-//            CookieBar.isCookieTitlePresent(driver);
-//        } catch (NoSuchElementException e) {
-//           return false;
-//        }
-//        return true;
-//    }
-
-
-//    public static void clickPrivacyStatement(WebDriver driver) throws InterruptedException {
-//        CookieBar privacyStatement = new CookieBar(driver);
-//        //CookieBar.clickStatement(driver, privacyStatement);
-//        CookieBar.clickStatement(driver);
-//    }
-
-    public static void clickPrivacyStatement(WebDriver driver) throws InterruptedException {
-        CookieBar privacyStatement = new CookieBar(driver);
-        //CookieBar.clickStatement(driver, privacyStatement);
-        CookieBar.clickStatement(driver);
-    }
 }

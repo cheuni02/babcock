@@ -34,6 +34,7 @@ public class CookieBar {
     static By cookie = By.id("js-babcock-cookie-bar");
     static By privacystatement = By.xpath("//a[@href=\'/Privacy\']");
     static By cookietitle = By.linkText("//h3[@class=\'NotificationBar-itemTitle\'");
+    static By closebutton = By.xpath("//div[@class=\'NotificationBar-closeContainer\']");
 
 //    def cookie_title(text)
 //    cookie_bar.h3(text: text)
@@ -85,6 +86,9 @@ public class CookieBar {
         return true; //driver.findElement(cookietitle).isDisplayed();
     }
 
+    public static void clickClose(WebDriver driver) {
+        driver.findElement(closebutton).click();
+    }
 
 
     // more than one attribute method 1
