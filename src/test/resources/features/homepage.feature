@@ -17,3 +17,20 @@ Feature: As a Babcock website user
     And the title of the cookie statement should be shown
     And I can click to open the statement page
     And Also be able to close the cookie statement​
+
+  Scenario: Checking the menu bar appears and the relevant links and sublinks appear
+    Then the Menu bar shows
+    And the links/sublinks are as follows:
+      | Capabilities                  | Sectors                      | Locations     | Careers                     | Investors                  | Suppliers | More       |
+      | Infrastructure                | Defence                      |  Africa       | Apprenticeships             | Results and Presentations  | -         | About      |
+      | Equipment                     | Energy                       | South America | Careers Login               | Annual Reports             | -         | News       |
+      | Training                      | Nuclear                      | Australasia   | A Day In The Life Of...     | Key Factsheet              | -         | Contact Us |
+      |                               | Emergency Services           | Canada        | Experienced Hires           | Governance                 | -         |            |
+      |                               | Marine                       | UK/Europe     | Further Careers Information | Financial Calendar         | -         |            |
+      |                               | Airports                     | Middle East   | Graduates                   | Key Financial Figures      | -         |            |
+      |                               | Automotive                   |               | Register for Job Alerts     | Regulatory News            | -         |            |
+      |                               | Media and Communications     |               | Working for Babcock         | Share Price Information    | -         |            |
+      |                               | Information and Intelligence |               | Vacancies                   | Shareholder Information    | -         |            |
+      |                               | Mining and Construction      |               |                             | IR Contact                 | -         |            |
+      |                               | Rail                         |               |                             | Consensus                  | -         |            |
+

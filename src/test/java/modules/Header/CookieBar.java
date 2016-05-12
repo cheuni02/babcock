@@ -36,24 +36,6 @@ public class CookieBar {
     static By cookietitle = By.linkText("//h3[@class=\'NotificationBar-itemTitle\'");
     static By closebutton = By.xpath("//div[@class=\'NotificationBar-closeContainer\']");
 
-//    def cookie_title(text)
-//    cookie_bar.h3(text: text)
-//    end
-//
-//    def cookie_text(text)
-//    cookie_bar.li(text: text)
-//    end
-//
-//    def privacy_statement
-//    cookie_bar.link(href: "/Privacy")
-//    end
-//
-//    def click_statement
-//    privacy_statement.click
-//            end
-//
-//    def close
-//    cookie_bar.link(class: "NotificationBar-close").click
 
     // 1)
 //    public boolean isPresent(WebDriver driver, CookieBar cookieBar) {

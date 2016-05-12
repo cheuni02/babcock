@@ -1,9 +1,11 @@
 package step_definitions;
 
+import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import modules.Header.CookieBar;
+import modules.Header.Menu;
 import org.openqa.selenium.WebDriver;
 import pageobjects.BCHomepage;
 
@@ -57,15 +59,20 @@ public class HomepageStepdefs {
         assertThat(CookieBar.isCookieTitlePresent(driver), is(true));
     }
 
-//    @After("@cookies")
-//    public void afterScenario(){
-//        System.console().printf("Cookies scenario done!");
-//    }
+    //////////////
+    // Menu bar
+    //////////////
 
-//    @After()
-//    public void logout() {
-//        //homePage.logout();
-//        driver.close();
-//    }
+    @Then("^the Menu bar shows$")
+    public void theMenuBarShows() throws Throwable {
+        assertThat(Menu.isHeaderBannerPresent(driver), is(true));
+    }
+
+    @And("^the links/sublinks are as follows:$")
+    public void theLinksSublinksAreAsFollows(DataTable stringsDataTable) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        System.out.println(stringsDataTable);
+    }
+
 
 }
